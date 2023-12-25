@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>UI Kit</title>
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="utils.css" />
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="container">
+				<h1>BUTTONS</h1>
+				<div class="buttons-wrapper">
+					<div class="btn-container">
+						<button class="btn btn-primary">button</button>
+						<button disabled class="btn btn-primary">button</button>
+					</div>
+					<div class="btn-container">
+						<button class="btn btn-secondary">button</button>
+						<button disabled class="btn btn-secondary">
+							button
+						</button>
+					</div>
+					<div class="btn-container">
+						<button class="btn btn-tertiary1">button</button>
+						<button class="btn btn-tertiary2">button</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="container">
+				<h1>CHECKBOX</h1>
+				<div class="checkbox-wrapper">
+					<div class="checkbox-container">
+						<div class="checkbox">
+							<input
+								checked
+								type="checkbox"
+								id="checkbox-active"
+							/>
+							<label for="checkbox-active"></label>
+						</div>
+
+						<div class="checkbox">
+							<input
+								checked
+								disabled
+								type="checkbox"
+								id="checkbox-active-disabled"
+							/>
+							<label for="checkbox-active-disabled"></label>
+						</div>
+					</div>
+
+					<div class="checkbox-container">
+						<div class="checkbox">
+							<input type="checkbox" id="checkbox" />
+							<label for="checkbox"></label>
+						</div>
+
+						<div class="checkbox">
+							<input
+								disabled
+								type="checkbox"
+								id="checkbox-disabled"
+							/>
+							<label for="checkbox-disabled"></label>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="container">
+				<h1>INPUTS</h1>
+				<h3 style="margin-bottom: 1em">2 + 2 = ?</h3>
+				<div class="input-wrapper">
+					<div class="input-container">
+						<div class="input-group">
+							<input
+								class="input-text input-state"
+								type="text"
+								placeholder="placeholder"
+								value="Input"
+							/>
+						</div>
+						<div class="input-group">
+							<input
+								class="input-text input-state"
+								disabled
+								type="text"
+								placeholder="placeholder"
+								value="Input"
+							/>
+						</div>
+					</div>
+
+					<div class="input-container">
+						<div class="input-group">
+							<input
+								class="input-text input-state"
+								type="text"
+								placeholder="placeholder"
+							/>
+						</div>
+						<div class="input-group">
+							<input
+								class="input-text input-state"
+								disabled
+								type="text"
+								placeholder="placeholder"
+							/>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="container">
+				<h1>POP UP</h1>
+				<div class="popup-group">
+					<button
+						class="sorting-group btn btn-tertiary1"
+						onclick="onClickSort1()"
+					>
+						<svg
+							width="24"
+							height="24"
+							viewBox="0 0 24 24"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M4 6H20M10 12H20M16 18H20"
+								stroke="black"
+								stroke-opacity="0.94"
+								stroke-width="1.5"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+						</svg>
+						<span>сортировать по темам</span>
+					</button>
+					<div class="popup" id="popup1">
+						<div class="popup-content">
+							<div class="popup-header">
+								<div class="popup-title" id="popup-title">
+									Подбери ленту по своему вкусу!
+								</div>
+								<button
+									class="popup-close"
+									onclick="onClickClose1()"
+								>
+									<svg
+										width="27"
+										height="27"
+										viewBox="0 0 27 27"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M4.5 4.5L22.5 22.5"
+											stroke="#ACACAC"
+											stroke-width="1.5"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										/>
+										<path
+											d="M4.5 22.5L22.5 4.5"
+											stroke="#ACACAC"
+											stroke-width="1.5"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										/>
+									</svg>
+								</button>
+							</div>
+							<div class="popup-body">
+								<div class="popup-search-container">
+									<input
+										type="text"
+										id="popup1-input"
+										class="popup-search-input input-text"
+										placeholder="найти"
+									/>
+								</div>
+								<div class="popup-tags"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="popup-group">
+					<button class="sorting-group btn btn-tertiary1" onclick="onClickSort2()">
+						<svg
+							width="24"
+							height="24"
+							viewBox="0 0 24 24"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M4 6H20M10 12H20M16 18H20"
+								stroke="black"
+								stroke-opacity="0.94"
+								stroke-width="1.5"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+						</svg>
+						<span>cортировать по темам</span>
+					</button>
+					<div class="popup" id="popup2">
+						<div class="popup-content">
+							<div class="popup-header">
+								<div class="popup-title" id="popup-title">
+									Читайте статьи по своему вкусу!
+								</div>
+								<button
+									class="popup-close"
+									onclick="onClickClose2()"
+								>
+									<svg
+										width="27"
+										height="27"
+										viewBox="0 0 27 27"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M4.5 4.5L22.5 22.5"
+											stroke="#ACACAC"
+											stroke-width="1.5"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										/>
+										<path
+											d="M4.5 22.5L22.5 4.5"
+											stroke="#ACACAC"
+											stroke-width="1.5"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										/>
+									</svg>
+								</button>
+							</div>
+							<div class="popup-body">
+								<div class="popup-search-container">
+									<input
+										type="text"
+										id="popup2-input"
+										class="popup-search-input input-text"
+										placeholder="найти"
+									/>
+								</div>
+								<div class="popup-tags"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="script.js" async defer></script>
+	</body>
+</html>
