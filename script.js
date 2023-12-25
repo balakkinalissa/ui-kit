@@ -23,27 +23,23 @@ inputs.forEach((input) => {
 				errorMessage = "Не заполнено поле";
 			}
 
-			if (errorLabel && errorLabel.classList.contains("visible")) {
-				errorLabel.classList.remove("visible");
-				setTimeout(() => {
-					errorLabel.remove();
-				}, 300);
+			if (errorLabel.innerHTML !== errorMessage) {
+                    errorLabel.classList.remove("show");
 			}
 
 			if (errorMessage !== "") {
 				input.classList.add("error");
 				input.classList.remove("correct");
 
-				const newErrorLabel = document.createElement("label");
-				newErrorLabel.textContent = errorMessage;
-				newErrorLabel.setAttribute("for", input.id);
-				input.insertAdjacentElement("afterend", newErrorLabel);
 				setTimeout(() => {
-					newErrorLabel.classList.add("visible");
-				}, 10);
+					errorLabel.classList.add("show");
+					errorLabel.textContent = errorMessage;
+				}, 300);
 			} else {
 				input.classList.add("correct");
 				input.classList.remove("error");
+
+				errorLabel.classList.remove("show");
 			}
 		}, 300)
 	);
@@ -192,15 +188,10 @@ popupTagsElements.forEach((popupTagsElement, index) => {
 	}
 
 	for (let i = 0; i < tags.length; i++) {
-
 		const tag = document.createElement("button");
 		tag.classList.add("popup-tag");
 		tag.classList.add("btn-tertiary1");
 		tag.textContent = tags[i].name;
-
-        if (input.value.includes(tags[i].name)) {
-            tag.classList.add("active");
-        }
 
 		tag.addEventListener("click", function () {
 			if (input.value.includes(tags[i].name)) {

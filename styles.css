@@ -267,16 +267,16 @@ body {
 	position: relative;
 }
 
-.input-group label {
+.input-label {
 	font-size: 14px;
 	color: #e8524e;
 	position: absolute;
-	bottom: -40px;
+	bottom: -25px;
 	opacity: 0;
 	transition: opacity 0.3s ease;
 }
 
-.input-group label.visible {
+.input-label.show {
 	opacity: 1;
 }
 
